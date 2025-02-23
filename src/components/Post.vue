@@ -2,12 +2,17 @@
   <div class="post">
     <div class="post-header">
       <div class="profile"></div>
-      <span class="profile-name">ChanKim</span>
+      <span class="profile-name">{{ posts.name }}</span>
     </div>
-    <div class="post-body"></div>
+    <div
+      class="post-body"
+      :style="{ backgroundImage: `url(${posts.postImage})` }"
+    ></div>
     <div class="post-content">
-      <p>43 Likes</p>
-      <p><strong>글쓴이아이디</strong> 임시내용</p>
+      <p>{{ posts.likes }} Likes</p>
+      <p>
+        <strong>{{ posts.name }}</strong> {{ posts.content }}
+      </p>
       <p class="date">May 15</p>
     </div>
   </div>
@@ -15,7 +20,9 @@
 
 <script>
 export default {
-
+  props: {
+    posts: Object,
+  },
 };
 </script>
 

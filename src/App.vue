@@ -6,10 +6,10 @@
     <ul class="header-button-right">
       <li>Next</li>
     </ul>
-    <img src="./assets/logo.png" class="logo" />
+    <img src="./assets/logo.svg" class="logo" />
   </div>
 
-  <Container />
+  <Container :posts="posts" />
 
   <div class="footer">
     <ul class="footer-button-plus">
@@ -21,8 +21,14 @@
 
 <script>
 import Container from "./components/Container.vue";
+import postdata from "./assets/postdata";
 export default {
   name: "App",
+  data() {
+    return {
+      posts: postdata,
+    };
+  },
   components: {
     Container: Container,
   },
